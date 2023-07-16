@@ -2,6 +2,7 @@ let myLibrary = [];
 const shelfArea = document.querySelector(".shelf");
 const addBookButton = document.querySelector("#add-book");
 const addBookSubmitButton = document.querySelector("#submit-add-book");
+const pageMask = document.querySelector(".page-mask");
 const popup = document.querySelector(".add-book-popup");
 const header = document.querySelector("header");
 const main = document.querySelector("main");
@@ -18,7 +19,7 @@ class Book {
 }
 
 function submitBook() {
-	console.log("Submit");
+	hideShowPopup();
 }
 
 function addBooksToLibrary() {
@@ -49,7 +50,11 @@ function getLibraryBooks() {
 function hideShowPopup() {
 	if (popup.style.display === "" || popup.style.display === "none") {
 		popup.style.display = "block";
-	} else if (popup.style.display === "block") popup.style.display = "none";
+		pageMask.style.display = "block";
+	} else if (popup.style.display === "block") {
+		popup.style.display = "none";
+		pageMask.style.display = "none";
+	}
 }
 
 addBooksToLibrary();
