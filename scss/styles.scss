@@ -23,14 +23,35 @@ header {
 	max-height: fit-content;
 }
 
+.shelf-topper {
+	display: flex;
+	justify-content: end;
+	background-color: $dark;
+	border-radius: 1em;
+	margin: 1em;
+
+	button {
+		margin: 1em;
+		padding: 1em;
+		border-radius: 1em;
+		background-color: $light;
+		border: none;
+		font-size: 1rem;
+	}
+}
+
 .shelf {
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
 	gap: 1em;
+	padding: 1em;
+	border-radius: 1em;
+	background-color: darken($dark, 10%);
 }
 
 .card {
 	background-color: $primary;
 	border-radius: 1em;
 	padding: 1em;
+	color: darken($dark, 50%);
 }
