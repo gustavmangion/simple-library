@@ -75,17 +75,37 @@ function getBookCard(book) {
 
 	const buttonsArea = document.createElement("div");
 
+	const index = myLibrary.indexOf(book);
 	const deleteButton = document.createElement("button");
 	deleteButton.textContent = "Remove";
+	deleteButton.dataset.libraryIndex = index;
+	deleteButton.addEventListener("click", removeFromLibrary);
 
 	const readButton = document.createElement("button");
 	readButton.textContent = book.read ? "Mark unread" : "Mark read";
+	readButton.dataset.libraryIndex = index;
+	readButton.addEventListener("click", readUnreadBook);
 
 	buttonsArea.appendChild(deleteButton);
 	buttonsArea.appendChild(readButton);
 	card.appendChild(buttonsArea);
 
 	return card;
+}
+
+function removeFromLibrary(e) {
+	const index = e.target.dataset.libraryIndex;
+	myLibrary.splice(index, 1);
+	shelfArea.innerHTML = "";
+	getLibraryBooks();
+}
+
+function readUnreadBook(e) {
+	const index = e.target.dataset.libraryIndex;
+	const book = myLibrary[index];
+	book.read = !book.read;
+	shelfArea.innerHTML = "";
+	getLibraryBooks();
 }
 
 function hideShowPopup() {
