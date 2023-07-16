@@ -22,7 +22,16 @@ class Book {
 }
 
 function submitBook() {
+	const form = document.querySelector(".book-form");
+	const inputs = form.elements;
+	let b = new Book();
+	b.title = inputs[0].value;
+	b.author = inputs[1].value;
+	b.pages = inputs[2].value;
+	b.read = inputs[3].value === "on";
+	myLibrary.push(b);
 	hideShowPopup();
+	form.reset();
 }
 
 function addBooksToLibrary() {
