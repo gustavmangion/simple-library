@@ -13,10 +13,11 @@ addBookSubmitButton.addEventListener("click", submitBook);
 addBookCancelButton.addEventListener("click", hideShowPopup);
 
 class Book {
-	constructor(title, author, pages) {
+	constructor(title, author, pages, read) {
 		this.title = title;
 		this.author = author;
 		this.pages = pages;
+		this.read = read;
 	}
 }
 
@@ -25,11 +26,11 @@ function submitBook() {
 }
 
 function addBooksToLibrary() {
-	myLibrary.push(new Book("Test", "Me", 50));
-	myLibrary.push(new Book("A Book", "You", 55));
-	myLibrary.push(new Book("A Novel", "Us", 90));
-	myLibrary.push(new Book("A Guide", "Him", 90));
-	myLibrary.push(new Book("A Diary", "Her", 90));
+	myLibrary.push(new Book("Test", "Me", 50, true));
+	myLibrary.push(new Book("A Book", "You", 55, false));
+	myLibrary.push(new Book("A Novel", "Us", 90, false));
+	myLibrary.push(new Book("A Guide", "Him", 90, true));
+	myLibrary.push(new Book("A Diary", "Her", 90, false));
 }
 
 function getLibraryBooks() {
