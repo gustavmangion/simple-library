@@ -44,19 +44,24 @@ function addBooksToLibrary() {
 
 function getLibraryBooks() {
 	myLibrary.map((x) => {
-		const card = document.createElement("div");
-		card.classList.add("card");
-
-		const title = document.createElement("h2");
-		title.textContent = x.title;
-
-		const author = document.createElement("h3");
-		author.textContent = x.author;
-
-		card.appendChild(title);
-		card.appendChild(author);
-		shelfArea.appendChild(card);
+		shelfArea.appendChild(getBookCard(x));
 	});
+}
+
+function getBookCard(book) {
+	const card = document.createElement("div");
+	card.classList.add("card");
+
+	const title = document.createElement("h2");
+	title.textContent = book.title;
+
+	const author = document.createElement("h3");
+	author.textContent = book.author;
+
+	card.appendChild(title);
+	card.appendChild(author);
+
+	return card;
 }
 
 function hideShowPopup() {
