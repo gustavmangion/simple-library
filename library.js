@@ -60,8 +60,20 @@ function getBookCard(book) {
 	const author = document.createElement("h3");
 	author.textContent = book.author;
 
+	const footer = document.createElement("div");
+	const pages = document.createElement("h3");
+	pages.textContent = book.pages;
+
+	const read = document.createElement("img");
+	if (book.read) read.src = "assets/unread.png";
+	else read.src = "assets/read.png";
+
+	footer.appendChild(pages);
+	footer.appendChild(read);
+
 	card.appendChild(title);
 	card.appendChild(author);
+	card.appendChild(footer);
 
 	return card;
 }

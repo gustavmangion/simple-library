@@ -53,10 +53,22 @@ button {
 	background-color: darken($dark, 10%);
 
 	.card {
+		display: flex;
+		flex-direction: column;
 		background-color: $primary;
 		border-radius: 1em;
 		padding: 1em;
 		color: darken($dark, 50%);
+
+		div {
+			display: flex;
+			justify-content: space-between;
+
+			img {
+				width: 1.5em;
+				height: 1.5em;
+			}
+		}
 	}
 }
 
