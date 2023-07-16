@@ -59,20 +59,31 @@ function getBookCard(book) {
 	const author = document.createElement("h3");
 	author.textContent = book.author;
 
-	const footer = document.createElement("div");
+	const pagesRead = document.createElement("div");
 	const pages = document.createElement("h3");
 	pages.textContent = book.pages;
 
 	const read = document.createElement("img");
-	if (book.read) read.src = "assets/read.png";
-	else read.src = "assets/unread.png";
+	read.src = book.read ? "assets/read.png" : "assets/unread.png";
 
-	footer.appendChild(pages);
-	footer.appendChild(read);
+	pagesRead.appendChild(pages);
+	pagesRead.appendChild(read);
 
 	card.appendChild(title);
 	card.appendChild(author);
-	card.appendChild(footer);
+	card.appendChild(pagesRead);
+
+	const buttonsArea = document.createElement("div");
+
+	const deleteButton = document.createElement("button");
+	deleteButton.textContent = "Remove";
+
+	const readButton = document.createElement("button");
+	readButton.textContent = book.read ? "Mark unread" : "Mark read";
+
+	buttonsArea.appendChild(deleteButton);
+	buttonsArea.appendChild(readButton);
+	card.appendChild(buttonsArea);
 
 	return card;
 }
