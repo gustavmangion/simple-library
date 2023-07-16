@@ -29,7 +29,9 @@ function submitBook() {
 	b.author = inputs[1].value;
 	b.pages = inputs[2].value;
 	b.read = inputs[3].value === "on";
+
 	myLibrary.push(b);
+	shelfArea.appendChild(getBookCard(b));
 	hideShowPopup();
 	form.reset();
 }
