@@ -23,22 +23,25 @@ header {
 	max-height: fit-content;
 }
 
+button {
+	margin: 1em;
+	padding: 1em;
+	border-radius: 1em;
+	background-color: $light;
+	border: none;
+	font-size: 1rem;
+	cursor: pointer;
+	&:hover {
+		background-color: darken($light, 10%);
+	}
+}
+
 .shelf-topper {
 	display: flex;
 	justify-content: end;
 	background-color: $dark;
 	border-radius: 1em;
 	margin: 1em;
-
-	button {
-		margin: 1em;
-		padding: 1em;
-		border-radius: 1em;
-		background-color: $light;
-		border: none;
-		font-size: 1rem;
-		cursor: pointer;
-	}
 }
 
 .shelf {
@@ -58,11 +61,56 @@ header {
 }
 
 .add-book-popup {
-	display: none;
+	display: block;
 	position: fixed;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	z-index: 9;
 	background-color: $dark;
+	padding: 2em;
+	border-radius: 1em;
+
+	.add-book-form {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+
+		h2 {
+			font-size: 2rem;
+		}
+
+		form {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			margin-top: 1em;
+
+			label {
+				font-size: 1.5rem;
+				font-weight: 400;
+				margin-top: 0.7em;
+			}
+
+			input {
+				height: 2rem;
+				font-size: 1.3rem;
+				border-radius: 1em;
+				padding: 1em;
+				border: none;
+				margin-top: 0.2em;
+
+				#bread {
+					height: 2rem;
+				}
+			}
+
+			button {
+				// margin-top: 1em;
+				width: 100%;
+				font-size: 1.5rem;
+			}
+		}
+	}
 }

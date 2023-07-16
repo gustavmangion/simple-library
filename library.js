@@ -1,9 +1,13 @@
 let myLibrary = [];
 const shelfArea = document.querySelector(".shelf");
 const addBookButton = document.querySelector("#add-book");
+const addBookSubmitButton = document.querySelector("#submit-add-book");
 const popup = document.querySelector(".add-book-popup");
+const header = document.querySelector("header");
+const main = document.querySelector("main");
 
 addBookButton.addEventListener("click", hideShowPopup);
+addBookSubmitButton.addEventListener("click", submitBook);
 
 class Book {
 	constructor(title, author, pages) {
@@ -11,6 +15,10 @@ class Book {
 		this.author = author;
 		this.pages = pages;
 	}
+}
+
+function submitBook() {
+	console.log("Submit");
 }
 
 function addBooksToLibrary() {
@@ -39,9 +47,9 @@ function getLibraryBooks() {
 }
 
 function hideShowPopup() {
-	if (popup.style.display === "" || popup.style.display === "none")
+	if (popup.style.display === "" || popup.style.display === "none") {
 		popup.style.display = "block";
-	else if (popup.style.display === "block") popup.style.display = "none";
+	} else if (popup.style.display === "block") popup.style.display = "none";
 }
 
 addBooksToLibrary();

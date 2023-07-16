@@ -20,12 +20,23 @@
 		<main>
 			<div class="shelf-topper"><button id="add-book">Add Book</button></div>
 			<div class="shelf"></div>
-			<div class="add-book-popup">
-				<div class="add-book-form">
-					<div class="h2">Add a new book</div>
-				</div>
-			</div>
 		</main>
+		<div class="add-book-popup">
+			<div class="add-book-form">
+				<h2>Add a new book<h2>
+				<form onsubmit="event.preventDefault(); ">
+					<label for="btitle">Title</label>
+					<input type="text" id="btitle" />
+					<label for="bauthor">Author</label>
+					<input type="text" id="bauthor" />
+					<label for="bpages">Pages</label>
+					<input type="number" id="bpages" min = 1 />
+					<label for="bread">Read</label>
+					<input type="checkbox" id="bread" />
+					<button id="submit-add-book">Add</button>
+				</form>
+			</div>
+		</div>
 		<script src="library.js"></script>
 	</body>
 </html>
