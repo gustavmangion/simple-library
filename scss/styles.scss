@@ -1,3 +1,5 @@
+@import "config";
+
 * {
 	padding: 0;
 	margin: 0;
@@ -6,4 +8,29 @@
 
 body {
 	font-family: "Dosis", sans-serif;
+	height: 100vh;
+	display: grid;
+	grid-template-rows: 8em;
+	grid-auto-rows: 1fr;
+	background-image: linear-gradient($dark, $light);
+	padding: 5em;
+}
+
+header {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	max-height: fit-content;
+}
+
+.shelf {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 1em;
+}
+
+.card {
+	background-color: $primary;
+	border-radius: 1em;
+	padding: 1em;
 }
