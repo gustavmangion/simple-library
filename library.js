@@ -1,5 +1,9 @@
 let myLibrary = [];
 const shelfArea = document.querySelector(".shelf");
+const addBookButton = document.querySelector("#add-book");
+const popup = document.querySelector(".add-book-popup");
+
+addBookButton.addEventListener("click", hideShowPopup);
 
 class Book {
 	constructor(title, author, pages) {
@@ -32,6 +36,12 @@ function getLibraryBooks() {
 		card.appendChild(author);
 		shelfArea.appendChild(card);
 	});
+}
+
+function hideShowPopup() {
+	if (popup.style.display === "" || popup.style.display === "none")
+		popup.style.display = "block";
+	else if (popup.style.display === "block") popup.style.display = "none";
 }
 
 addBooksToLibrary();

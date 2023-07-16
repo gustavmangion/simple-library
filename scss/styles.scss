@@ -37,6 +37,7 @@ header {
 		background-color: $light;
 		border: none;
 		font-size: 1rem;
+		cursor: pointer;
 	}
 }
 
@@ -47,11 +48,21 @@ header {
 	padding: 1em;
 	border-radius: 1em;
 	background-color: darken($dark, 10%);
+
+	.card {
+		background-color: $primary;
+		border-radius: 1em;
+		padding: 1em;
+		color: darken($dark, 50%);
+	}
 }
 
-.card {
-	background-color: $primary;
-	border-radius: 1em;
-	padding: 1em;
-	color: darken($dark, 50%);
+.add-book-popup {
+	display: none;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 9;
+	background-color: $dark;
 }
