@@ -2,6 +2,7 @@ let myLibrary = [];
 const shelfArea = document.querySelector(".shelf");
 const addBookButton = document.querySelector("#add-book");
 const addBookSubmitButton = document.querySelector("#submit-add-book");
+const addBookCancelButton = document.querySelector("#cancel-add-book");
 const pageMask = document.querySelector(".page-mask");
 const popup = document.querySelector(".add-book-popup");
 const header = document.querySelector("header");
@@ -9,6 +10,7 @@ const main = document.querySelector("main");
 
 addBookButton.addEventListener("click", hideShowPopup);
 addBookSubmitButton.addEventListener("click", submitBook);
+addBookCancelButton.addEventListener("click", hideShowPopup);
 
 class Book {
 	constructor(title, author, pages) {
