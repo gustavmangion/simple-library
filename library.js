@@ -28,8 +28,7 @@ function submitBook() {
 	b.title = inputs[0].value;
 	b.author = inputs[1].value;
 	b.pages = inputs[2].value;
-	b.read = inputs[3].value === "on";
-
+	b.read = inputs[3].checked;
 	myLibrary.push(b);
 	shelfArea.appendChild(getBookCard(b));
 	hideShowPopup();
@@ -65,8 +64,8 @@ function getBookCard(book) {
 	pages.textContent = book.pages;
 
 	const read = document.createElement("img");
-	if (book.read) read.src = "assets/unread.png";
-	else read.src = "assets/read.png";
+	if (book.read) read.src = "assets/read.png";
+	else read.src = "assets/unread.png";
 
 	footer.appendChild(pages);
 	footer.appendChild(read);
